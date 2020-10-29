@@ -64,8 +64,6 @@ gn_add_ggplot_to_results <- function(g, description=NULL, zoom=2, width=750, hei
 }
 
 gn_add_dataframe_to_results <- function(df, description=NULL, rowname_header=' ') {
-  print('rownames(df) =')
-  print(rownames(df))
   if (!is.null(rownames(df))) {
     df <- df %>% rownames_to_column(rowname_header)
   }
@@ -82,9 +80,11 @@ gn_add_dataframe_to_results <- function(df, description=NULL, rowname_header=' '
 
   .gn$results[[length(.gn$results) + 1]] <<- list(
     type = 'table',
-    description = description,
-    cols = cols,
-    data = table
+    data = list(
+      caption = description,
+      columns = cols,
+      data = table
+    )
   )
 }
 
