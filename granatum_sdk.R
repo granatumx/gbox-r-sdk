@@ -2,6 +2,8 @@ library(tibble)
 library(purrr)
 library(dplyr)
 library(tidyr)
+library(base64enc)
+library(jsonlite)
 
 # .gn and all it's fields are not supposed to be accessed by the user
 

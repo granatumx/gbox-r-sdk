@@ -17,5 +17,6 @@ RUN R -e 'install.packages(c("ggplot2"))'
 RUN R -e 'install.packages(c("limma"))'
 RUN R -e 'install.packages(c("reshape2"))'
 RUN R -e 'install.packages(c("jsonlite"))'
+RUN R -e 'install.packages(c("base64enc"))'
 
 COPY . .
